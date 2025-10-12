@@ -11,6 +11,7 @@ A Model Context Protocol (MCP) server that provides powerful mathematical comput
 - **Statistical Analysis** - Statistical measures and data analysis
 - **Symbolic Mathematics** - Simplify, factor, and expand expressions
 - **Arbitrary Code Execution** - Execute any Wolfram Language code
+- **Data Visualization Workflow** - Generate data with Wolfram, visualize with React/Python
 
 ## Prerequisites
 
@@ -95,6 +96,29 @@ Claude should use the `wolfram_test_connection` tool and report success.
 | `wolfram_statistics` | Statistical analysis | Mean of `{1, 2, 3, 4, 5}` |
 | `wolfram_execute` | Execute arbitrary Wolfram code | `Table[Prime[n], {n, 1, 10}]` |
 | `wolfram_test_connection` | Test Wolfram connection | Verify setup |
+
+## Visualization Workflow
+
+The Wolfram MCP excels at mathematical computation but returns symbolic representations rather than rendered images. For visual graphs and charts, use the hybrid workflow:
+
+**Wolfram (Computation) → Data Extraction → Visualization Tool (Rendering)**
+
+📖 **[Complete Visualization Guide](VISUALIZATION_WORKFLOW.md)** - Comprehensive documentation on creating beautiful, interactive charts
+
+### Quick Example
+
+1. **Generate data with Wolfram:**
+```wolfram
+Table[{x, Sin[x], Cos[x]}, {x, 0, 2*Pi, 0.1}]
+```
+
+2. **Visualize with React or Python:**
+- See [`examples/trig_visualization.jsx`](examples/trig_visualization.jsx) for interactive React charts
+- See [`examples/trig_plot.py`](examples/trig_plot.py) for publication-quality matplotlib plots
+
+📁 **[View All Examples](examples/)** - Complete working examples with code
+
+---
 
 ## Usage Examples
 
