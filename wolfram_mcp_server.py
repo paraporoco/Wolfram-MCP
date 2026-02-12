@@ -38,7 +38,7 @@ class WolframExecutor:
         """
         try:
             result = subprocess.run(
-                [self.executable, "-code", code],
+                [self.executable, "-c", code],
                 stdin=subprocess.DEVNULL,
                 capture_output=True,
                 text=True,
